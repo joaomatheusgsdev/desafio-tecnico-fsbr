@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<script src="../index.js" />
+
+</h:head>
+
+<h:body>
+
+	<h:form id="formCliente">
+
+		<div class="ui-fluid p-formgrid p-grid">
+			<div class="p-field p-col-12 p-md-6">
+				<p:outputLabel value="Nome" />
+				<p:inputText id="nome" value="#{clienteBean.cliente.nome}" />
+			</div>
+			<div class="p-field p-col-12 p-md-6">
+				<p:outputLabel for="email" value="Email" />
+				<p:inputText id="email" value="#{clienteBean.cliente.email}" />
+			</div>
+			<div class="p-field p-col-12">
+				<p:outputLabel for="telefone" value="Telefone" />
+				<p:inputText id="telefone" value="#{clienteBean.cliente.telefone}" />
+			</div>
+			<div class="p-field p-col-12 p-md-6">
+				<p:outputLabel for="cep" value="Cep" />
+				<p:inputText id="cep" value="#{clienteBean.cliente.cep}"
+					onblur="pesquisacep(this.value)" />
+
+			</div>
+
+			<div class="p-field p-col-12 p-md-3">
+				<p:outputLabel for="endereco" value="Endereco" />
+				<p:inputText id="endereco" value="#{clienteBean.cliente.endereco}" />
+			</div>
+
+			<div class="p-field p-col-12 p-md-3">
+				<p:outputLabel for="bairro" value="Bairro" />
+				<p:inputText id="bairro" value="#{clienteBean.cliente.bairro}" />
+
+			</div>
+
+			<div class="p-field p-col-12 p-md-3">
+				<p:outputLabel for="estado" value="Estado" />
+				<p:inputText id="estado" value="#{clienteBean.cliente.estado}" />
+
+			</div>
+
+			<div class="p-field p-col-12 p-md-3">
+				<p:outputLabel for="cidade" value="Cidade" />
+				<p:inputText id="cidade" value="#{clienteBean.cliente.cidade}" />
+			</div>
+		</div>
+		
+		<br/>
+
+		<span>
+			<p:commandButton value="Salvar" styleClass=".ui-button"
+				action="#{clienteBean.salvar}" />
+		</span>
+		
+				<span>
+			<p:commandButton value="Voltar" action="homeCliente"/>
+		</span>
+	</h:form>
+
+</h:body>
+</html>
