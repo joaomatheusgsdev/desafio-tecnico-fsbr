@@ -2,12 +2,16 @@ package br.desafio.fsbr.entidades;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.GeneratorType;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
+
 
 @Entity
 public class Cliente implements Serializable{
@@ -18,20 +22,26 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
+	@NotBlank(message = "O nome não pode ser vazios")
 	private String nome;
 	
+	@Email(message = "O Email precisa ser válido")
+	@Column(unique = true)
 	private String email;
 	
 	private String telefone;
 	
+	@NotBlank(message = "O cep não pode ser vazios")
 	private String cep;
 	
+	@NotBlank(message = "O endereco não pode ser vazios")
 	private String endereco;
 	
+	@NotBlank(message = "O bairro não pode ser vazios")
 	private String bairro;
-	
+	@NotBlank(message = "A cidade não pode ser vazios")
 	private String cidade;
-	
+	@NotBlank(message = "O estado não pode ser vazios")
 	private String estado;
 	
 	private boolean editable = false;

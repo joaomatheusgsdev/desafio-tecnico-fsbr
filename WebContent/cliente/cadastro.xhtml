@@ -13,11 +13,17 @@
 <h:body>
 
 	<h:form id="formCliente">
+	
+	<p:growl id="growl" showDetail="true" sticky="true" />
+
+	
+	
 
 		<div class="ui-fluid p-formgrid p-grid">
 			<div class="p-field p-col-12 p-md-6">
 				<p:outputLabel value="Nome" />
-				<p:inputText id="nome" value="#{clienteBean.cliente.nome}" required="true" requiredMessage="O Nome precisa ser obrigatorio"/>
+				<p:inputText id="nome" value="#{clienteBean.cliente.nome}" required="true" 
+				requiredMessage="O nome não pode ser vazio"/>
 			</div>
 			<div class="p-field p-col-12 p-md-6">
 				<p:outputLabel for="email" value="Email" />
@@ -60,7 +66,7 @@
 		<br/>
 
 		<span>
-			<p:commandButton value="Salvar" styleClass=".ui-button"
+			<p:commandButton value="Salvar" update="growl" styleClass=".ui-button"
 				action="#{clienteBean.salvar}" />
 		</span>
 		
