@@ -17,7 +17,7 @@
 		<div class="ui-fluid p-formgrid p-grid">
 			<div class="p-field p-col-12 p-md-6">
 				<p:outputLabel value="Nome" />
-				<p:inputText id="nome" value="#{clienteBean.cliente.nome}" />
+				<p:inputText id="nome" value="#{clienteBean.cliente.nome}" required="true" requiredMessage="O Nome precisa ser obrigatorio"/>
 			</div>
 			<div class="p-field p-col-12 p-md-6">
 				<p:outputLabel for="email" value="Email" />

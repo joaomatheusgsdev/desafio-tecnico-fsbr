@@ -15,6 +15,9 @@
 	<h:form id="formCliente">
 
 		<div class="ui-fluid p-formgrid p-grid">
+
+				<p:inputText id="id" value="#{clienteBean.cliente.id}" type="hidden"/>
+
 			<div class="p-field p-col-12 p-md-6">
 				<p:outputLabel value="Nome" />
 				<p:inputText id="nome" value="#{clienteBean.cliente.nome}" />
@@ -56,16 +59,14 @@
 				<p:inputText id="cidade" value="#{clienteBean.cliente.cidade}" />
 			</div>
 		</div>
-		
-		<br/>
 
-		<span>
-			<p:commandButton value="Salvar Alteração" styleClass=".ui-button"
-				action="#{clienteBean.update}" />
+		<br />
+
+		<span> <p:commandButton value="Salvar Alteração"
+				styleClass=".ui-button" action="#{clienteBean.update}" />
 		</span>
-		
-				<span>
-			<p:commandButton value="Voltar" action="homeCliente"/>
+
+		<span> <p:commandButton value="Voltar" action="homeCliente" />
 		</span>
 	</h:form>
 

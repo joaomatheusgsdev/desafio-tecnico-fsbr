@@ -30,7 +30,8 @@
 				<f:facet name="header">
 				Email
 				</f:facet>
-				<h:outputText value="#{c.email}" />
+				<h:outputText value="#{c.email}"/>
+				<h:outputLabel value="#{c.editable}"></h:outputLabel>
 			</p:column>
 
 			<p:column>
@@ -80,8 +81,8 @@
 					Editar/Deletar
 				</f:facet>
 				<span> <p:commandButton value="editar"
-						action="#{clienteBean.update(c)}" /> 
-						<f:param name="action" value="#{c.id}"></f:param>
+						action="#{clienteBean.editAction(c)}"/> 
+					
 				</span>
 				<span> <p:commandButton value="deletar"
 						action="#{clienteBean.deletar(c.id)}" />

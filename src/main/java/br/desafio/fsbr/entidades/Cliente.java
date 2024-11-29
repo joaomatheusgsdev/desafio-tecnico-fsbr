@@ -33,6 +33,18 @@ public class Cliente implements Serializable{
 	private String cidade;
 	
 	private String estado;
+	
+	private boolean editable = false;
+	
+	
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
 
 	public Long getId() {
 		return id;
@@ -109,10 +121,10 @@ public class Cliente implements Serializable{
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone + ", cep=" + cep
-				+ ", endereco=" + endereco + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + "]";
+				+ ", endereco=" + endereco + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado
+				+ ", editable=" + editable + "]";
 	}
-	
-	
+
 	
 
 }

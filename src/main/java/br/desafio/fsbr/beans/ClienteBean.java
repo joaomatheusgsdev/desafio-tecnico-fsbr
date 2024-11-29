@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
@@ -26,22 +27,35 @@ public class ClienteBean {
 	private List<Cliente> clientes = new ArrayList<>();
 	
 	
+	  public String saveAction() {
+		    //get all existing value but set "editable" to false 
+		    for (Cliente cliente : clientes){
+		    	cliente.setEditable(false);
+		    }
+		    //return to current page
+		    return "";
+		  }
+		  public String editAction(Cliente c) {
+		  
+			  cliente = c;
+		    return "update";
+		  }
+		 
+	
+	
 	public String salvar() {
 		
-		
-		System.out.println(cliente.getId());
-		
+			
 		daoCliente.salvar(cliente);
 		
 		return "";
 	}
 	
-	public String update(Cliente c) {
+	public String update() {
 		
-        
-    System.out.println(c.getId());
-    	
-		return "";
+		cliente = daoCliente.merge(cliente);
+            	
+		return "listarClientes";
 		
 	}
 	

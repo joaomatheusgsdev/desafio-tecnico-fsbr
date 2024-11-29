@@ -44,6 +44,8 @@ public class DaoCliente<E> {
 		
 		entityManager.close();
 		
+		System.out.println(cliente.toString());
+		
 		return cliente;
 		
 	}
@@ -81,9 +83,7 @@ public class DaoCliente<E> {
 		entityTransaction.commit();
 		
 		entityManager.close();
-		
-		System.out.println(clientes.toString());
-		
+				
 		
 		return clientes;
 			
