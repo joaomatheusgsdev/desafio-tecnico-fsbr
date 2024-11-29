@@ -1,32 +1,64 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" 
-xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://java.sun.com/jsf/core">
-
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
+    <title>Home Cliente</title>
+    <h:outputStylesheet name="styles.css" />
+    <style>
+        /* CSS para centralizar o conteúdo */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
 
-<title>Home Cliente</title>
+        h1 {
+            text-align: center;
+        }
 
+        .content {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons span {
+            margin: 10px;
+        }
+    </style>
 </h:head>
 
 <h:body>
 
 <h:form>
 
-<div style="margin: auto">
-<span>
-<p:commandButton value="Cadastrar novo cliente" action="cadastro"/>
-</span>
+    <div class="content">
+        <h1>Bem vindo a Home Cliente</h1>
 
+        <div class="buttons">
+            <span>
+                <p:commandButton value="Cadastrar novo cliente" action="cadastro" />
+            </span>
+            <span>
+                <p:commandButton value="Listar clientes" action="listarClientes" />
+            </span>
+        </div>
+    </div>
 
-<span>
-<p:commandButton value="Listar clientes" action="listarClientes"/>
-</span>
-
-</div>
 </h:form>
 
 </h:body>

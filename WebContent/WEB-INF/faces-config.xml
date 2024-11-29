@@ -11,12 +11,4 @@
   </exception-handler-factory>
 </factory>
 	
-	   <navigation-rule>
-        <from-view-id>/index.html</from-view-id> <!-- A página inicial -->
-        <navigation-case>
-            <from-outcome>success</from-outcome>
-            <to-view-id>/homeCliente.xhtml</to-view-id> <!-- Página que será aberta inicialmente -->
-        </navigation-case>
-    </navigation-rule>
-
 </faces-config>

@@ -12,12 +12,25 @@
 		
 	</script>
 
+
+	<style type="text/css">
+.ui-datatable {
+	display: table;
+}
+
+.ui-datatable table {
+	table-layout: auto !important;
+}
+</style>
+
+
 </h:head>
 
 <h:body>
 
 	<h:form id="formCliente">
-		<p:dataTable value="#{clienteBean.clientes}" var="c">
+		<p:dataTable value="#{clienteBean.clientes}" var="c"
+			styleClass="table">
 
 			<p:column>
 				<f:facet name="header">
@@ -30,11 +43,10 @@
 				<f:facet name="header">
 				Email
 				</f:facet>
-				<h:outputText value="#{c.email}"/>
-				<h:outputLabel value="#{c.editable}"></h:outputLabel>
+				<h:outputText value="#{c.email}" style="justify-content: center;" />
 			</p:column>
 
-			<p:column>
+			<p:column width="100">
 				<f:facet name="header">
 				Telefone
 				</f:facet>
@@ -80,16 +92,26 @@
 				<f:facet name="header">
 					Editar/Deletar
 				</f:facet>
-				<span> <p:commandButton value="editar"
-						action="#{clienteBean.editAction(c)}"/> 
-					
-				</span>
-				<span> <p:commandButton value="deletar"
+				<div> <p:commandButton value="editar"
+						action="#{clienteBean.editAction(c)}" />
+
+				</div>
+				<br/>
+				<div> <p:commandButton value="deletar"
 						action="#{clienteBean.deletar(c.id)}" />
-				</span>
+				</div>
 			</p:column>
 
 		</p:dataTable>
+		
+		<br/>
+
+
+		<span> <p:commandButton value="Novo" action="cadastro" />
+
+		</span>
+		<span> <p:commandButton value="Voltar" action="homeCliente" />
+		</span>
 
 	</h:form>
 

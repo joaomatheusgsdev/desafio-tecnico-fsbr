@@ -1,5 +1,6 @@
 package br.desafio.fsbr.beans;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -33,7 +34,7 @@ public class ClienteBean {
 		    	cliente.setEditable(false);
 		    }
 		    //return to current page
-		    return "";
+		    return "cadastro";
 		  }
 		  public String editAction(Cliente c) {
 		  
@@ -48,6 +49,13 @@ public class ClienteBean {
 			
 		daoCliente.salvar(cliente);
 		
+        try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("cadastro.xhtml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return "";
 	}
 	

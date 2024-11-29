@@ -66,12 +66,10 @@
 		<br/>
 
 		<span>
-			<p:commandButton value="Salvar" update="growl" styleClass=".ui-button"
-				action="#{clienteBean.salvar}" />
+			<p:commandButton value="Salvar" update="growl" styleClass=".ui-button" action="#{clienteBean.salvar}"/>
 		</span>
 		
-				<span>
-			<p:commandButton value="Voltar" action="homeCliente"/>
+		<span><p:commandButton value="Voltar" action="homeCliente" immediate="true" />
 		</span>
 	</h:form>
 
