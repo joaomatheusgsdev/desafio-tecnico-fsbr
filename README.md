@@ -50,7 +50,7 @@ Este é um sistema simples de cadastro de clientes desenvolvido em **Java 8** ut
 #### cd desafiotecnicofsbr
 
 ### 2. Configurar o servidor Tomcat
-#### Copie o arquivo .war gerado para o diretório webapps do Tomcat.
+#### Copie o arquivo ,jar gerado para o diretório webapps do Tomcat.
 #### O arquivo .jar pode ser encontrado no diretório target após a compilação (ex.: desafiotecnicofsbr.jar).
 #### Inicie o servidor Tomcat.
 #### Execute o script startup.sh (Linux/macOS) ou startup.bat (Windows) localizado no diretório bin do Tomcat.
